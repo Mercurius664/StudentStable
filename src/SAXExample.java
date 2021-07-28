@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class SAXExample {
-    private static ArrayList<Model.Student> students = new ArrayList<>();
+    private static ArrayList<Student> students = new ArrayList<>();
 
     public static void read(File path) throws ParserConfigurationException, SAXException, IOException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -74,7 +74,7 @@ public class SAXExample {
                     (motherEarning != null && !motherEarning.isEmpty()) &&
                     (numberOfBrothers != null && !numberOfBrothers.isEmpty())&&
                     (numberOfSisters != null && !numberOfSisters.isEmpty())) {
-                students.add(new Model.Student(FIOStudent,FIOFather,Integer.parseInt(fatherEarning),FIOMother,Integer.parseInt(motherEarning),
+                students.add(new Student(FIOStudent,FIOFather,Integer.parseInt(fatherEarning),FIOMother,Integer.parseInt(motherEarning),
                         Integer.parseInt(numberOfBrothers),Integer.parseInt(numberOfBrothers)));
                 FIOStudent = null;
                 FIOFather = null;

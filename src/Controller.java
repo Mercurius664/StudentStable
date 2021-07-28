@@ -11,7 +11,6 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Vector;
 
 public class Controller {
     private static int numberOfRowsOnPage;
@@ -118,7 +117,7 @@ public class Controller {
                    }
                    if (!hasErrors){
 
-                       Model.getStudentArrayList().add(new Model.Student(studentName,fatherName,fatherEarnings,motherName,motherEarnings,
+                       Model.getStudentArrayList().add(new Student(studentName,fatherName,fatherEarnings,motherName,motherEarnings,
                                numberOfBrothers,numberOfSisters));
                        View.updateJLabelNumbersOfRecords();
 
@@ -535,8 +534,8 @@ public class Controller {
                 if (!View.getJRadioButtonFatherMoneyEnable().isSelected() && !View.getJRadioButtonMotherMoneyEnable().isSelected()){
                     return;
                 }else if (View.getJRadioButtonFatherMoneyEnable().isSelected() && View.getJRadioButtonMotherMoneyEnable().isSelected()){
-                    ArrayList<Model.Student> fatherArrayList = new ArrayList<>();
-                    ArrayList<Model.Student> motherArrayList = new ArrayList<>();
+                    ArrayList<Student> fatherArrayList = new ArrayList<>();
+                    ArrayList<Student> motherArrayList = new ArrayList<>();
                     String errorsFather="";
                     boolean hasFatherErrorsMax = false;
                     boolean hasFatherErrorsMin = false;
@@ -796,7 +795,7 @@ public class Controller {
         View.getJButtonForDeleteIndex1().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+              ArrayList<Student> arrayListDelete = new ArrayList<>();
                 String jTextFiendContent = View.getjTextFieldForDeleteIndex1().getText();
                 if (jTextFiendContent.equals("")){
                     return;
@@ -842,7 +841,7 @@ public class Controller {
                 if (!View.getJRadioButtonMotherDeleteEnable().isSelected() && !View.getJRadioButtonFatherDeleteEnable().isSelected()){
                     return;
                 }else if (View.getJRadioButtonMotherDeleteEnable().isSelected() && View.getJRadioButtonFatherDeleteEnable().isSelected()){
-                    ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                    ArrayList<Student> arrayListDelete = new ArrayList<>();
                     String jTextFiendContent1 = View.getJTextFieldMotherForDeleteIndex2().getText();
                     String jTextFiendContent2 = View.getJTextFieldFatherForDeleteIndex2().getText();
                     if (jTextFiendContent1.equals("") || jTextFiendContent2.equals("")){
@@ -865,7 +864,7 @@ public class Controller {
                     View. updateJLabelTotalPages();
                     View.updateJLabelNumberOfRecordsOnPage();
                 }else if (View.getJRadioButtonMotherDeleteEnable().isSelected()){
-                    ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                    ArrayList<Student> arrayListDelete = new ArrayList<>();
                     String jTextFiendContent = View.getJTextFieldMotherForDeleteIndex2().getText();
                     for (int i=0; i<Model.getStudentArrayList().size(); i++){
                         if (Model.getStudentArrayList().get(i).getMotherName().contains(jTextFiendContent)){
@@ -884,7 +883,7 @@ public class Controller {
                     View. updateJLabelTotalPages();
                     View.updateJLabelNumberOfRecordsOnPage();
                 }else if (View.getJRadioButtonFatherDeleteEnable().isSelected()){
-                    ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                    ArrayList<Student> arrayListDelete = new ArrayList<>();
                     String jTextFiendContent = View.getJTextFieldFatherForDeleteIndex2().getText();
                     for (int i=0; i<Model.getStudentArrayList().size(); i++){
                         if (Model.getStudentArrayList().get(i).getFatherName().contains(jTextFiendContent)){
@@ -942,7 +941,7 @@ public class Controller {
                         JOptionPane.showMessageDialog(null,"Ошибка ввода поля кол-во сестёр");
                         return;
                     }
-                    ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                    ArrayList<Student> arrayListDelete = new ArrayList<>();
                     for (int i=0; i<Model.getStudentArrayList().size(); i++){
                         if (Model.getStudentArrayList().get(i).getNumberOfBrothers() == numberOfBrothers &&
                                 Model.getStudentArrayList().get(i).getNumberOfSisters() == numberOfSisters){
@@ -970,7 +969,7 @@ public class Controller {
                         JOptionPane.showMessageDialog(null,"Ошибка ввода поля кол-во братьев");
                         return;
                     }
-                    ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                    ArrayList<Student> arrayListDelete = new ArrayList<>();
                     for (int i=0; i<Model.getStudentArrayList().size(); i++){
                         if (Model.getStudentArrayList().get(i).getNumberOfBrothers() == numberOfBrothers){
                            arrayListDelete.add(Model.getStudentArrayList().get(i));
@@ -996,7 +995,7 @@ public class Controller {
                         JOptionPane.showMessageDialog(null,"Ошибка ввода поля кол-во сестёр");
                         return;
                     }
-                    ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                    ArrayList<Student> arrayListDelete = new ArrayList<>();
                     for (int i=0; i<Model.getStudentArrayList().size(); i++){
                         if (Model.getStudentArrayList().get(i).getNumberOfSisters() == numberOfSisters){
                             arrayListDelete.add(Model.getStudentArrayList().get(i));
@@ -1046,8 +1045,8 @@ public class Controller {
                 if (!View.getJRadioButtonFatherMoneyDeleteEnable().isSelected() && !View.getJRadioButtonMotherMoneyDeleteEnable().isSelected()){
                     return;
                 }else if (View.getJRadioButtonFatherMoneyDeleteEnable().isSelected() && View.getJRadioButtonMotherMoneyDeleteEnable().isSelected()){
-                    ArrayList<Model.Student> fatherArrayList = new ArrayList<>();
-                    ArrayList<Model.Student> motherArrayList = new ArrayList<>();
+                    ArrayList<Student> fatherArrayList = new ArrayList<>();
+                    ArrayList<Student> motherArrayList = new ArrayList<>();
                     String errorsFather="";
                     boolean hasFatherErrorsMax = false;
                     boolean hasFatherErrorsMin = false;
@@ -1137,7 +1136,7 @@ public class Controller {
                     ArrayList<Integer> fatherCheck = new ArrayList<>();
 
 
-                    ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                    ArrayList<Student> arrayListDelete = new ArrayList<>();
                     for (int i=0; i<fatherArrayList.size(); i++){
                         for (int j=0; j<motherArrayList.size(); j++){
                             if (fatherArrayList.get(i).equals(motherArrayList.get(j))){
@@ -1187,7 +1186,7 @@ public class Controller {
                     }
 
                     if (!(hasErrorsMin || hasErrorsMax)){
-                        ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                        ArrayList<Student> arrayListDelete = new ArrayList<>();
                         for (int i=0; i<Model.getStudentArrayList().size();i++){
                             if (Model.getStudentArrayList().get(i).getFatherEarnings()>=fatherMin && Model.getStudentArrayList().get(i).getFatherEarnings()<= fatherMax){
                                 arrayListDelete.add(Model.getStudentArrayList().get(i));
@@ -1205,7 +1204,7 @@ public class Controller {
                         View. updateJLabelTotalPages();
                         View.updateJLabelNumberOfRecordsOnPage();
                     }else if (!hasErrorsMin){
-                        ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                        ArrayList<Student> arrayListDelete = new ArrayList<>();
                         for (int i=0; i<Model.getStudentArrayList().size();i++){
                             if (Model.getStudentArrayList().get(i).getFatherEarnings()>=fatherMin){
                                 arrayListDelete.add(Model.getStudentArrayList().get(i));
@@ -1222,7 +1221,7 @@ public class Controller {
                         View. updateJLabelTotalPages();
                         View.updateJLabelNumberOfRecordsOnPage();
                     }else {
-                        ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                        ArrayList<Student> arrayListDelete = new ArrayList<>();
                         for (int i=0; i<Model.getStudentArrayList().size();i++){
                             if (Model.getStudentArrayList().get(i).getFatherEarnings()<=fatherMax){
                                 arrayListDelete.add(Model.getStudentArrayList().get(i));
@@ -1267,7 +1266,7 @@ public class Controller {
                     }
 
                     if (!(hasErrorsMin || hasErrorsMax)){
-                        ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                        ArrayList<Student> arrayListDelete = new ArrayList<>();
                         for (int i=0; i<Model.getStudentArrayList().size();i++){
                             if (Model.getStudentArrayList().get(i).getMotherEarnings()>=motherMin && Model.getStudentArrayList().get(i).getMotherEarnings()<= motherMax){
                                 arrayListDelete.add(Model.getStudentArrayList().get(i));
@@ -1285,7 +1284,7 @@ public class Controller {
                         View. updateJLabelTotalPages();
                         View.updateJLabelNumberOfRecordsOnPage();
                     }else if (!hasErrorsMin){
-                        ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                        ArrayList<Student> arrayListDelete = new ArrayList<>();
                         for (int i=0; i<Model.getStudentArrayList().size();i++){
                             if (Model.getStudentArrayList().get(i).getMotherEarnings()>=motherMin){
                                 arrayListDelete.add(Model.getStudentArrayList().get(i));
@@ -1304,7 +1303,7 @@ public class Controller {
                         View. updateJLabelTotalPages();
                         View.updateJLabelNumberOfRecordsOnPage();
                     }else {
-                        ArrayList<Model.Student> arrayListDelete = new ArrayList<>();
+                        ArrayList<Student> arrayListDelete = new ArrayList<>();
                         for (int i=0; i<Model.getStudentArrayList().size();i++){
                             if (Model.getStudentArrayList().get(i).getMotherEarnings()<=motherMax){
                                 arrayListDelete.add(Model.getStudentArrayList().get(i));
@@ -1418,7 +1417,7 @@ public class Controller {
         }
 
     }
-    private static void numberOfRowsOnPageLogic(DefaultTableModel defaultTableModel, ArrayList<Model.Student> arrayList, int numberOfRows, int currentPage){
+    private static void numberOfRowsOnPageLogic(DefaultTableModel defaultTableModel, ArrayList<Student> arrayList, int numberOfRows, int currentPage){
 
         int rowCount = defaultTableModel.getRowCount();
         for (int i = 0; i < rowCount; i++) {

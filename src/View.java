@@ -944,7 +944,7 @@ public class View {
 
     }
 
-    public static void jTableUpdate(DefaultTableModel defaultTableModel, JTable jTable, JPanel jPanel, ArrayList<Model.Student> studentArrayList){
+    public static void jTableUpdate(DefaultTableModel defaultTableModel, JTable jTable, JPanel jPanel, ArrayList<Student> studentArrayList){
 
             defaultTableModel.addRow(new String[]{studentArrayList.get(defaultTableModel.getRowCount()).getStudentName(),
                     studentArrayList.get(defaultTableModel.getRowCount()).getFatherName(),
