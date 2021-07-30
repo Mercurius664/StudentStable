@@ -1,13 +1,13 @@
 class Student {
-    private String studentName;
-    private String fatherName;
-    private int fatherEarnings;
-    private String motherName;
-    private int motherEarnings;
-    private int numberOfBrothers;
-    private int numberOfSisters;
+    private final String studentName;
+    private final String fatherName;
+    private final int fatherEarnings;
+    private final String motherName;
+    private final int motherEarnings;
+    private final int numberOfBrothers;
+    private final int numberOfSisters;
 
-    Student(String studentName, String fatherName, int fatherEarnings,
+    public Student(String studentName, String fatherName, int fatherEarnings,
             String motherName, int motherEarnings, int numberOfBrothers,
             int numberOfSisters) {
 
