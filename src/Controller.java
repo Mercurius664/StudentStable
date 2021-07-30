@@ -28,7 +28,7 @@ public class Controller {
             public void actionPerformed(ActionEvent e) {
                 AddDialog addDialogFrame = new AddDialog();
 
-                Model.getStudentArrayList().add(addDialogFrame.getStudent());
+              /*  Model.getStudentArrayList().add(addDialogFrame.getStudent());*/
                 View.updateJLabelNumbersOfRecords();
 
                 View.updateJLabelTotalPages();
@@ -128,30 +128,7 @@ public class Controller {
         View.getJComboBoxMainFrame().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                if (View.getJComboBoxMainFrame().getSelectedIndex() == 0) {
-                    numberOfRowsOnPage = 0;
-                } else if (View.getJComboBoxMainFrame().getSelectedIndex() == 1) {
-                    numberOfRowsOnPage = 1;
-                } else if (View.getJComboBoxMainFrame().getSelectedIndex() == 2) {
-                    numberOfRowsOnPage = 2;
-                } else if (View.getJComboBoxMainFrame().getSelectedIndex() == 3) {
-                    numberOfRowsOnPage = 3;
-                } else if (View.getJComboBoxMainFrame().getSelectedIndex() == 4) {
-                    numberOfRowsOnPage = 4;
-                } else if (View.getJComboBoxMainFrame().getSelectedIndex() == 5) {
-                    numberOfRowsOnPage = 5;
-                } else if (View.getJComboBoxMainFrame().getSelectedIndex() == 6) {
-                    numberOfRowsOnPage = 6;
-                } else if (View.getJComboBoxMainFrame().getSelectedIndex() == 7) {
-                    numberOfRowsOnPage = 7;
-                } else if (View.getJComboBoxMainFrame().getSelectedIndex() == 8) {
-                    numberOfRowsOnPage = 8;
-                } else if (View.getJComboBoxMainFrame().getSelectedIndex() == 9) {
-                    numberOfRowsOnPage = 9;
-                } else {
-                    numberOfRowsOnPage = 10;
-                }
+                numberOfRowsOnPage = View.getJComboBoxMainFrame().getSelectedIndex();
                 View.setCurrentPageNumber(1);
                 Controller.numberOfRowsOnPageLogic(View.getDefaultTableModel(), Model.getStudentArrayList(), numberOfRowsOnPage, View.getCurrentPageNumber());
                 View.updateCurrentPageNumber();
