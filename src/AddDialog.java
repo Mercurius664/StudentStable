@@ -151,6 +151,7 @@ public class AddDialog extends JFrame {
                             numberOfBrothers, numberOfSisters);
                     /////////////////////////////////////////
                     Model.getStudentArrayList().add(student);
+                    View.updateJLabelNumbersOfRecords();
                     /////////////////////////////////////////
                 } else {
                     JOptionPane.showMessageDialog(null, errors);

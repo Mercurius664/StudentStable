@@ -134,6 +134,7 @@ public class Controller {
                 View.updateCurrentPageNumber();
                 View.updateJLabelTotalPages();
                 View.updateJLabelNumberOfRecordsOnPage();
+                View.updateJLabelNumbersOfRecords();
             }
         });
 
