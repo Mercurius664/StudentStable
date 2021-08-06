@@ -7,6 +7,7 @@ import com.IvashkinIgor.model.Model;
 import com.IvashkinIgor.model.Student;
 import com.IvashkinIgor.main.*;
 import com.IvashkinIgor.parsers.*;
+import com.IvashkinIgor.utilities.Utilities;
 import org.xml.sax.SAXException;
 
 import javax.swing.*;
@@ -116,19 +117,6 @@ public class MainDialogController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 AddDialogView.getInstance().initialize();
-
-                /*com.IvashkinIgor.model.Model.getStudentArrayList().add(addDialogFrame.getStudent());
-                MainDialog.updateJLabelNumbersOfRecords();
-
-                MainDialog.updateJLabelTotalPages();
-                if (MainDialog.getDefaultTableModel().getRowCount() >= numberOfRowsOnPage) {
-                    return;
-                }
-
-
-                MainDialog.jTableUpdate(MainDialog.getDefaultTableModel(), MainDialog.getJTable(), MainDialog.getJPanel(), Model.getStudentArrayList());
-                MainDialog.updateJLabelNumberOfRecordsOnPage();*/
-
             }
 
         });
