@@ -1,3 +1,7 @@
+package com.IvashkinIgor.parsers;
+
+import com.IvashkinIgor.model.Model;
+import com.IvashkinIgor.model.Student;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -13,6 +17,7 @@ public class SAXExample {
     private static ArrayList<Student> students = new ArrayList<>();
 
     public static void read(File path) throws ParserConfigurationException, SAXException, IOException {
+        Model model = Model.getInstance();
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
 
@@ -20,8 +25,8 @@ public class SAXExample {
         parser.parse(path, handler);
 
 
-        Model.getStudentArrayList().clear();
-        Model.getStudentArrayList().addAll(students);
+        model.getStudentArrayList().clear();
+        model.getStudentArrayList().addAll(students);
 
     }
 

@@ -1,3 +1,6 @@
+package com.IvashkinIgor.parsers;
+
+import com.IvashkinIgor.model.Model;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -13,6 +16,7 @@ import java.io.File;
 
 public class DOMxmlWriter {
     public static void write(File path) {
+        Model model = Model.getInstance();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder;
         try {
@@ -20,15 +24,15 @@ public class DOMxmlWriter {
 
             Document doc = builder.newDocument();
             Element rootElement =
-                    doc.createElementNS(String.valueOf(path), "Student");
+                    doc.createElementNS(String.valueOf(path), "com.IvashkinIgor.model.Student");
             doc.appendChild(rootElement);
 
 
 
-            for (int i=0; i<Model.getStudentArrayList().size(); i++){
-                rootElement.appendChild(getStudent(doc,Model.getStudentArrayList().get(i).getStudentName(),Model.getStudentArrayList().get(i).getFatherName(),
-                        Model.getStudentArrayList().get(i).getFatherEarnings(),Model.getStudentArrayList().get(i).getMotherName(),Model.getStudentArrayList().get(i).getMotherEarnings(),
-                        Model.getStudentArrayList().get(i).getNumberOfBrothers(),Model.getStudentArrayList().get(i).getNumberOfSisters()));
+            for (int i = 0; i< model.getStudentArrayList().size(); i++){
+                rootElement.appendChild(getStudent(doc, model.getStudentArrayList().get(i).getStudentName(), model.getStudentArrayList().get(i).getFatherName(),
+                        model.getStudentArrayList().get(i).getFatherEarnings(), model.getStudentArrayList().get(i).getMotherName(), model.getStudentArrayList().get(i).getMotherEarnings(),
+                        model.getStudentArrayList().get(i).getNumberOfBrothers(), model.getStudentArrayList().get(i).getNumberOfSisters()));
             }
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -52,7 +56,7 @@ public class DOMxmlWriter {
     private static Node getStudent(Document doc, String FIOStudent, String FIOFather,
                                    int fatherEarning, String FIOMother, int motherEarning,
                                    int numberOfBrothers, int numberOfSisters) {
-        Element student = doc.createElement("Student");
+        Element student = doc.createElement("com.IvashkinIgor.model.Student");
 
 
         student.appendChild(getStudentElements(doc, student, "FIOStudent", FIOStudent));

@@ -1,4 +1,6 @@
-class Student {
+package com.IvashkinIgor.model;
+
+public class Student {
     private final String studentName;
     private final String fatherName;
     private final int fatherEarnings;
