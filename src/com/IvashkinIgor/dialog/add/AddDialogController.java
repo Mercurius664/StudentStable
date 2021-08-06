@@ -3,6 +3,7 @@ package com.IvashkinIgor.dialog.add;
 import com.IvashkinIgor.main.MainDialogView;
 import com.IvashkinIgor.model.Model;
 import com.IvashkinIgor.model.Student;
+import com.IvashkinIgor.utilities.Utilities;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -72,6 +73,17 @@ public class AddDialogController {
                     /////////////////////////////////////////
                     Model.getInstance().getStudentArrayList().add(student);
                     MainDialogView.getInstance().updateJLabelNumbersOfRecords();
+                    MainDialogView.getInstance().updateJLabelTotalPages();
+                    if (MainDialogView.getInstance().getDefaultTableModel().getRowCount() >= MainDialogView.getInstance().getNumbersOfRecordsOnPage()) {
+                        return;
+                    }
+
+
+                    Utilities.jTableUpdate(MainDialogView.getInstance().getDefaultTableModel(), MainDialogView.getInstance().getJTable(),
+                            MainDialogView.getInstance().getJPanel(),
+                            Model.getInstance().getStudentArrayList());
+                    MainDialogView.getInstance().updateJLabelNumberOfRecordsOnPage();
+
                     /////////////////////////////////////////
                 } else {
                     JOptionPane.showMessageDialog(null, errors);
