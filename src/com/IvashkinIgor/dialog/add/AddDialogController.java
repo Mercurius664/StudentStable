@@ -78,7 +78,6 @@ public class AddDialogController {
                         return;
                     }
 
-
                     Utilities.jTableUpdate(MainDialogView.getInstance().getDefaultTableModel(), MainDialogView.getInstance().getJTable(),
                             MainDialogView.getInstance().getJPanel(),
                             Model.getInstance().getStudentArrayList());
