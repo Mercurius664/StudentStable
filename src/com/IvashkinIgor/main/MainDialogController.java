@@ -5,9 +5,7 @@ import com.IvashkinIgor.dialog.delete.DeleteDialogView;
 import com.IvashkinIgor.dialog.find.FindDialogView;
 import com.IvashkinIgor.model.Model;
 import com.IvashkinIgor.model.Student;
-import com.IvashkinIgor.main.*;
 import com.IvashkinIgor.parsers.*;
-import com.IvashkinIgor.utilities.Utilities;
 import org.xml.sax.SAXException;
 
 import javax.swing.*;

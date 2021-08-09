@@ -35,9 +35,6 @@ public class DeleteByParentNameView extends JFrame {
     }
 
 
-    public static DeleteByParentNameView getDeleteByParentNameView() {
-        return deleteByParentNameView;
-    }
 
     public  JRadioButton getJRadioButtonFather() {
         return jRadioButtonFather;
@@ -57,18 +54,6 @@ public class DeleteByParentNameView extends JFrame {
 
     public  JTextField getJTextFieldMother() {
         return jTextFieldMother;
-    }
-
-    public  JLabel getJLabelFather() {
-        return jLabelFather;
-    }
-
-    public  JLabel getJLabelMother() {
-        return jLabelMother;
-    }
-
-    public  JPanel getJPanelDelete() {
-        return jPanelDelete;
     }
 
     public void initialize(){

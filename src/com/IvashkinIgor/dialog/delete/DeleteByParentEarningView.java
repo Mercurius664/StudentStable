@@ -21,10 +21,6 @@ public class DeleteByParentEarningView extends JFrame{
     private static DeleteByParentEarningView deleteByParentEarningView;
 
 
-    public static DeleteByParentEarningView getDeleteByParentEarningView() {
-        return deleteByParentEarningView;
-    }
-
 
 
     public static DeleteByParentEarningView getInstance() {
@@ -73,25 +69,7 @@ public class DeleteByParentEarningView extends JFrame{
         return jTextFieldMotherMinForDeleteIndex4;
     }
 
-    public  JLabel getJLabelFatherMaxForDeleteIndex4() {
-        return jLabelFatherMaxForDeleteIndex4;
-    }
 
-    public  JLabel getJLabelFatherMinForDeleteIndex4() {
-        return jLabelFatherMinForDeleteIndex4;
-    }
-
-    public  JLabel getJLabelMotherMaxForDeleteIndex4() {
-        return jLabelMotherMaxForDeleteIndex4;
-    }
-
-    public  JLabel getJLabelMotherMinForDeleteIndex4() {
-        return jLabelMotherMinForDeleteIndex4;
-    }
-
-    public  JPanel getJPanelForDeleteIndex4() {
-        return jPanelForDeleteIndex4;
-    }
     public void initialize(){
         jPanelForDeleteIndex4 = new JPanel();
         GridBagLayout gridBagLayout = new GridBagLayout();

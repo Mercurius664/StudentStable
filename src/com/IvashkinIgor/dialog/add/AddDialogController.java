@@ -70,7 +70,7 @@ public class AddDialogController {
                 if (!hasErrors) {
                     student = new Student(studentName, fatherName, fatherEarnings, motherName, motherEarnings,
                             numberOfBrothers, numberOfSisters);
-                    /////////////////////////////////////////
+
                     Model.getInstance().getStudentArrayList().add(student);
                     MainDialogView.getInstance().updateJLabelNumbersOfRecords();
                     MainDialogView.getInstance().updateJLabelTotalPages();
@@ -83,7 +83,6 @@ public class AddDialogController {
                             Model.getInstance().getStudentArrayList());
                     MainDialogView.getInstance().updateJLabelNumberOfRecordsOnPage();
 
-                    /////////////////////////////////////////
                 } else {
                     JOptionPane.showMessageDialog(null, errors);
                 }

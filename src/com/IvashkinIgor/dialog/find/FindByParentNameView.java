@@ -44,18 +44,6 @@ public class FindByParentNameView extends JFrame {
         return jTextFieldMotherForFindIndex2;
     }
 
-    public  JLabel getJLabelFatherForFindIndex2() {
-        return jLabelFatherForFindIndex2;
-    }
-
-    public  JLabel getJLabelMotherForFindIndex2() {
-        return jLabelMotherForFindIndex2;
-    }
-
-    public  JPanel getJPanelForFindIndex2() {
-        return jPanelForFindIndex2;
-    }
-
     private FindByParentNameView() {
         super();
         setVisible(false);

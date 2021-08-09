@@ -67,16 +67,8 @@ public class FindDialogView extends JFrame {
         return numbersOfRecordsForFind;
     }
 
-    public JTextArea getJTextAreaTotalPages() {
-        return jTextAreaTotalPages;
-    }
-
     public JTextArea getJTextAreaRecords() {
         return jTextAreaRecords;
-    }
-
-    public JTextArea getJTextAreaRecordsOnPage() {
-        return jTextAreaRecordsOnPage;
     }
 
     public JComboBox getJComboBoxForButtonFindRowsOnPage() {
@@ -89,10 +81,6 @@ public class FindDialogView extends JFrame {
 
     public JButton getJButtonForButtonFindNextPage() {
         return jButtonForButtonFindNextPage;
-    }
-
-    public JLabel getJLabelCurrentPageForButtonFind() {
-        return jLabelCurrentPageForButtonFind;
     }
 
     public JButton getJButtonForButtonFindPreviousPage() {

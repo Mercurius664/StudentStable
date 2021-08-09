@@ -4,12 +4,12 @@ import com.IvashkinIgor.model.Model;
 import com.IvashkinIgor.model.Student;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import com.IvashkinIgor.main.*;
+import com.IvashkinIgor.utilities.Utilities;
 
 public class DeleteByCountOfBrothersAndSistersController {
     private static DeleteByCountOfBrothersAndSistersController deleteByCountOfBrothersAndSistersController;
@@ -132,40 +132,7 @@ public class DeleteByCountOfBrothersAndSistersController {
 
     private void updateJRadioButton(){
         DeleteByCountOfBrothersAndSistersView values = DeleteByCountOfBrothersAndSistersView.getInstance();
-        jRadioButtonCheck(values.getJRadioButtonSister(), values.getJRadioButtonBrother(),
+        Utilities.jRadioButtonCheck(values.getJRadioButtonSister(), values.getJRadioButtonBrother(),
                 values.getJTextFieldFSister(), values.getJTextFieldBrother());
-    }
-
-    private static void jRadioButtonCheck(JRadioButton jRadioButton1, JRadioButton jRadioButton2,
-                                         JTextField jTextField1, JTextField jTextField2) {
-        DeleteByCountOfBrothersAndSistersView values = DeleteByCountOfBrothersAndSistersView.getInstance();
-        if (jRadioButton1.isSelected() && jRadioButton2.isSelected()) {
-            jTextField1.setEditable(true);
-            jTextField1.setBackground(Color.WHITE);
-            jTextField2.setEditable(true);
-            jTextField2.setBackground(Color.WHITE);
-        } else if (!jRadioButton1.isSelected() && !jRadioButton2.isSelected()) {
-            jTextField1.setEditable(false);
-            jTextField1.setBackground(values.getBackground());
-            jTextField1.setText("");
-            jTextField2.setEditable(false);
-            jTextField2.setBackground(values.getBackground());
-            jTextField2.setText("");
-        } else if (jRadioButton1.isSelected()) {
-            jTextField1.setEditable(true);
-            jTextField1.setBackground(Color.WHITE);
-
-            jTextField2.setEditable(false);
-            jTextField2.setBackground(values.getBackground());
-            jTextField2.setText("");
-        } else {
-            jTextField2.setEditable(true);
-            jTextField2.setBackground(Color.WHITE);
-
-            jTextField1.setEditable(false);
-            jTextField1.setBackground(values.getBackground());
-            jTextField1.setText("");
-        }
-
     }
 }

@@ -61,16 +61,8 @@ public class MainDialogView extends JFrame {
         return numbersOfRecords;
     }
 
-    public JTextArea getJLabelNumbersOfRecords() {
-        return jLabelNumbersOfRecords;
-    }
-
     public int getNumbersOfRecordsOnPage() {
         return numbersOfRecordsOnPage;
-    }
-
-    public JTextArea getJLabelNumbersOfRecordsOnPage() {
-        return jLabelNumbersOfRecordsOnPage;
     }
 
     public JComboBox getJComboBoxMainFrame() {
@@ -87,10 +79,6 @@ public class MainDialogView extends JFrame {
 
     public int getCurrentPageNumber() {
         return currentPageNumber;
-    }
-
-    public JLabel getCurrentPage() {
-        return currentPage;
     }
 
     public JButton getButtonNext() {
@@ -127,10 +115,6 @@ public class MainDialogView extends JFrame {
 
     public DefaultTableModel getDefaultTableModel() {
         return defaultTableModel;
-    }
-
-    public JScrollPane getJScrollPane() {
-        return jScrollPane;
     }
 
     public JTable getJTable() {
