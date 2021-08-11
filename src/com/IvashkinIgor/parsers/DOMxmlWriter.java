@@ -1,6 +1,7 @@
 package com.IvashkinIgor.parsers;
 
 import com.IvashkinIgor.model.Model;
+import com.IvashkinIgor.model.Student;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -30,9 +31,7 @@ public class DOMxmlWriter {
 
 
             for (int i = 0; i< model.getStudentArrayList().size(); i++){
-                rootElement.appendChild(getStudent(doc, model.getStudentArrayList().get(i).getStudentName(), model.getStudentArrayList().get(i).getFatherName(),
-                        model.getStudentArrayList().get(i).getFatherEarnings(), model.getStudentArrayList().get(i).getMotherName(), model.getStudentArrayList().get(i).getMotherEarnings(),
-                        model.getStudentArrayList().get(i).getNumberOfBrothers(), model.getStudentArrayList().get(i).getNumberOfSisters()));
+                rootElement.appendChild(appendStudent(doc, model.getStudentArrayList().get(i)));
             }
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -51,28 +50,23 @@ public class DOMxmlWriter {
             e.printStackTrace();
         }
     }
-
-
-    private static Node getStudent(Document doc, String FIOStudent, String FIOFather,
-                                   int fatherEarning, String FIOMother, int motherEarning,
-                                   int numberOfBrothers, int numberOfSisters) {
+    private static Node appendStudent(Document doc, Student studentData) {
         Element student = doc.createElement("com.IvashkinIgor.model.Student");
 
-
-        student.appendChild(getStudentElements(doc, student, "FIOStudent", FIOStudent));
-        student.appendChild(getStudentElements(doc, student, "FIOFather", FIOFather));
-        student.appendChild(getStudentElements(doc, student, "fatherEarning", String.valueOf(fatherEarning)));
-        student.appendChild(getStudentElements(doc, student, "FIOMother", FIOMother));
-        student.appendChild(getStudentElements(doc, student, "motherEarning", String.valueOf(motherEarning)));
-        student.appendChild(getStudentElements(doc, student, "numberOfBrothers", String.valueOf(numberOfBrothers)));
-        student.appendChild(getStudentElements(doc, student, "numberOfSisters", String.valueOf(numberOfSisters)));
+        student.appendChild(studentElements(doc, student, "FIOStudent", studentData.getStudentName()));
+        student.appendChild(studentElements(doc, student, "FIOFather", studentData.getFatherName()));
+        student.appendChild(studentElements(doc, student, "fatherEarning", String.valueOf(studentData.getFatherEarnings())));
+        student.appendChild(studentElements(doc, student, "FIOMother", studentData.getMotherName()));
+        student.appendChild(studentElements(doc, student, "motherEarning", String.valueOf(studentData.getMotherEarnings())));
+        student.appendChild(studentElements(doc, student, "numberOfBrothers", String.valueOf(studentData.getNumberOfBrothers())));
+        student.appendChild(studentElements(doc, student, "numberOfSisters", String.valueOf(studentData.getNumberOfSisters())));
 
 
         return student;
     }
 
 
-    private static Node getStudentElements(Document doc, Element element, String name, String value) {
+    private static Node studentElements(Document doc, Element element, String name, String value) {
         Element node = doc.createElement(name);
         node.appendChild(doc.createTextNode(value));
         return node;

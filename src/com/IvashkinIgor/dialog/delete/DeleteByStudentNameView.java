@@ -11,10 +11,6 @@ public class DeleteByStudentNameView extends JFrame {
 
     private static DeleteByStudentNameView deleteByStudentNameView;
 
-    public  DeleteByStudentNameView getDeleteByStudentNameView() {
-        return deleteByStudentNameView;
-    }
-
     public  JButton getJButtonForDeleteIndex1() {
         return jButtonForDeleteIndex1;
     }
@@ -23,13 +19,6 @@ public class DeleteByStudentNameView extends JFrame {
         return jTextFieldForDeleteIndex1;
     }
 
-    public  JLabel getJLabelForDeleteIndex1() {
-        return jLabelForDeleteIndex1;
-    }
-
-    public  JPanel getJPanelForDeleteIndex1() {
-        return jPanelForDeleteIndex1;
-    }
 
     public static DeleteByStudentNameView getInstance() {
         if (deleteByStudentNameView == null){

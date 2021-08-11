@@ -21,14 +21,6 @@ public class FindByStudentNameView extends JFrame{
         return jTextFieldForFindIndex1;
     }
 
-    public JLabel getJLabelForFindIndex1() {
-        return jLabelForFindIndex1;
-    }
-
-    public JPanel getJPanelForFindIndex1() {
-        return jPanelForFindIndex1;
-    }
-
     public static FindByStudentNameView getInstance() {
         if (findByStudentNameView == null){
             findByStudentNameView = new FindByStudentNameView();

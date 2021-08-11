@@ -288,48 +288,6 @@ public class DeleteByParentEarningController {
         });
     }
 
-   /* private void updateNumberInformation(){
-        MainDialogView mainDialogView = MainDialogView.getInstance();
-        mainDialogView.setCurrentPageNumber(1);
-        mainDialogView.updateCurrentPageNumber();
-        updateRowsOnPage();
-        mainDialogView.updateJLabelNumbersOfRecords();
-        mainDialogView.updateJLabelTotalPages();
-        mainDialogView.updateJLabelNumberOfRecordsOnPage();
-    }
-
-    private void updateRowsOnPage() {
-        MainDialogView mainDialogView = MainDialogView.getInstance();
-        MainDialogController mainDialogController = MainDialogController.getInstance();
-        numberOfRowsOnPageLogic(mainDialogView.getDefaultTableModel(), Model.getInstance().getStudentArrayList(),
-                mainDialogController.getNumberOfRowsOnPage(), mainDialogView.getCurrentPageNumber());
-    }
-
-    private static void numberOfRowsOnPageLogic(DefaultTableModel defaultTableModel, ArrayList<Student> arrayList, int numberOfRows, int currentPage) {
-
-        int rowCount = defaultTableModel.getRowCount();
-        for (int i = 0; i < rowCount; i++) {
-            defaultTableModel.removeRow(0);
-        }
-        for (int i = (currentPage * numberOfRows - numberOfRows); i < arrayList.size(); i++) {
-            if (defaultTableModel.getRowCount() >= numberOfRows) {
-                break;
-            }
-            Object[] tableContent = new String[]{
-                    arrayList.get(i).getStudentName(),
-                    arrayList.get(i).getFatherName(),
-                    String.valueOf(arrayList.get(i).getFatherEarnings()),
-                    arrayList.get(i).getMotherName(),
-                    String.valueOf(arrayList.get(i).getMotherEarnings()),
-                    String.valueOf(arrayList.get(i).getNumberOfBrothers()),
-                    String.valueOf(arrayList.get(i).getNumberOfSisters())
-            };
-            defaultTableModel.addRow(tableContent);
-
-        }
-
-    }*/
-
 
     private void updateJRadioButton(){
         DeleteByParentEarningView valueVariable = DeleteByParentEarningView.getInstance();

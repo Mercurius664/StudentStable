@@ -132,41 +132,9 @@ public class FindByCountOfBrothersAndSistersController {
     
     private void updateJRadioButton(){
         FindByCountOfBrothersAndSistersView variables = FindByCountOfBrothersAndSistersView.getInstance();
-        jRadioButtonCheck(variables.getJRadioButtonSisterEnable(),
+        Utilities.jRadioButtonCheck(variables.getJRadioButtonSisterEnable(),
                 variables.getJRadioButtonBrotherEnable(),
                 variables.getJTextFieldFSisterForFindIndex3(),
                 variables.getJTextFieldBrotherForFindIndex3());
-    }
-
-    public static void jRadioButtonCheck(JRadioButton jRadioButton1, JRadioButton jRadioButton2,
-                                         JTextField jTextField1, JTextField jTextField2) {
-        if (jRadioButton1.isSelected() && jRadioButton2.isSelected()) {
-            jTextField1.setEditable(true);
-            jTextField1.setBackground(Color.WHITE);
-            jTextField2.setEditable(true);
-            jTextField2.setBackground(Color.WHITE);
-        } else if (!jRadioButton1.isSelected() && !jRadioButton2.isSelected()) {
-            jTextField1.setEditable(false);
-            jTextField1.setBackground(FindByCountOfBrothersAndSistersView.getInstance().getBackground());
-            jTextField1.setText("");
-            jTextField2.setEditable(false);
-            jTextField2.setBackground(FindByCountOfBrothersAndSistersView.getInstance().getBackground());
-            jTextField2.setText("");
-        } else if (jRadioButton1.isSelected()) {
-            jTextField1.setEditable(true);
-            jTextField1.setBackground(Color.WHITE);
-
-            jTextField2.setEditable(false);
-            jTextField2.setBackground(FindByCountOfBrothersAndSistersView.getInstance().getBackground());
-            jTextField2.setText("");
-        } else {
-            jTextField2.setEditable(true);
-            jTextField2.setBackground(Color.WHITE);
-
-            jTextField1.setEditable(false);
-            jTextField1.setBackground(FindByCountOfBrothersAndSistersView.getInstance().getBackground());
-            jTextField1.setText("");
-        }
-
     }
 }

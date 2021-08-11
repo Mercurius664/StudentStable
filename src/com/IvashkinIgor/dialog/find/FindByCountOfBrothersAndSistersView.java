@@ -16,11 +16,6 @@ public class FindByCountOfBrothersAndSistersView extends JFrame{
 
     private static FindByCountOfBrothersAndSistersView findByCountOfBrothersAndSistersView;
 
-
-    public  JPanel getJPanelForFindIndex3() {
-        return jPanelForFindIndex3;
-    }
-
     public  JRadioButton getJRadioButtonSisterEnable() {
         return jRadioButtonSisterEnable;
     }
@@ -39,14 +34,6 @@ public class FindByCountOfBrothersAndSistersView extends JFrame{
 
     public  JTextField getJTextFieldBrotherForFindIndex3() {
         return jTextFieldBrotherForFindIndex3;
-    }
-
-    public  JLabel getJLabelSisterForFindIndex3() {
-        return jLabelSisterForFindIndex3;
-    }
-
-    public  JLabel getJLabelBrotherForFindIndex3() {
-        return jLabelBrotherForFindIndex3;
     }
 
     public static FindByCountOfBrothersAndSistersView getInstance() {

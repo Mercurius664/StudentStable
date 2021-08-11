@@ -4,6 +4,8 @@ package com.IvashkinIgor.dialog.delete;
 import com.IvashkinIgor.main.MainDialogController;
 import com.IvashkinIgor.model.Model;
 import com.IvashkinIgor.model.Student;
+import com.IvashkinIgor.utilities.Utilities;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -96,92 +98,14 @@ public class DeleteByParentNameController {
             }
         });
     }
-
-
-    /*private void updateNumberInformation(){
-        MainDialogView mainDialogView = MainDialogView.getInstance();
-        mainDialogView.setCurrentPageNumber(1);
-        mainDialogView.updateCurrentPageNumber();
-        updateRowsOnPage();
-        mainDialogView.updateJLabelNumbersOfRecords();
-        mainDialogView.updateJLabelTotalPages();
-        mainDialogView.updateJLabelNumberOfRecordsOnPage();
-
-    }
-
-    private void updateRowsOnPage() {
-        MainDialogView mainDialogView = MainDialogView.getInstance();
-        MainDialogController mainDialogController = MainDialogController.getInstance();
-        numberOfRowsOnPageLogic(mainDialogView.getDefaultTableModel(), Model.getInstance().getStudentArrayList(),
-                mainDialogController.getNumberOfRowsOnPage(), mainDialogView.getCurrentPageNumber());
-    }
-
-    private static void numberOfRowsOnPageLogic(DefaultTableModel defaultTableModel, ArrayList<Student> arrayList, int numberOfRows, int currentPage) {
-
-        int rowCount = defaultTableModel.getRowCount();
-        for (int i = 0; i < rowCount; i++) {
-            defaultTableModel.removeRow(0);
-        }
-        for (int i = (currentPage * numberOfRows - numberOfRows); i < arrayList.size(); i++) {
-            if (defaultTableModel.getRowCount() >= numberOfRows) {
-                break;
-            }
-            Object[] tableContent = new String[]{
-                    arrayList.get(i).getStudentName(),
-                    arrayList.get(i).getFatherName(),
-                    String.valueOf(arrayList.get(i).getFatherEarnings()),
-                    arrayList.get(i).getMotherName(),
-                    String.valueOf(arrayList.get(i).getMotherEarnings()),
-                    String.valueOf(arrayList.get(i).getNumberOfBrothers()),
-                    String.valueOf(arrayList.get(i).getNumberOfSisters())
-            };
-            defaultTableModel.addRow(tableContent);
-
-        }
-
-    }
-    */
     
     private void updateJRadioButton(){
         DeleteByParentNameView valueVariables = DeleteByParentNameView.getInstance();
         
-        jRadioButtonCheck(valueVariables.getJRadioButtonFather(),
+        Utilities.jRadioButtonCheck(valueVariables.getJRadioButtonFather(),
                 valueVariables.getJRadioButtonMother(),
                 valueVariables.getJTextFieldFather(),
                 valueVariables.getJTextFieldMother());
-    }
-
-    private static void jRadioButtonCheck(JRadioButton jRadioButton1, JRadioButton jRadioButton2,
-                                          JTextField jTextField1, JTextField jTextField2) {
-        DeleteByCountOfBrothersAndSistersView values = DeleteByCountOfBrothersAndSistersView.getInstance();
-        if (jRadioButton1.isSelected() && jRadioButton2.isSelected()) {
-            jTextField1.setEditable(true);
-            jTextField1.setBackground(Color.WHITE);
-            jTextField2.setEditable(true);
-            jTextField2.setBackground(Color.WHITE);
-        } else if (!jRadioButton1.isSelected() && !jRadioButton2.isSelected()) {
-            jTextField1.setEditable(false);
-            jTextField1.setBackground(values.getBackground());
-            jTextField1.setText("");
-            jTextField2.setEditable(false);
-            jTextField2.setBackground(values.getBackground());
-            jTextField2.setText("");
-        } else if (jRadioButton1.isSelected()) {
-            jTextField1.setEditable(true);
-            jTextField1.setBackground(Color.WHITE);
-
-            jTextField2.setEditable(false);
-            jTextField2.setBackground(values.getBackground());
-            jTextField2.setText("");
-        } else {
-            jTextField2.setEditable(true);
-            jTextField2.setBackground(Color.WHITE);
-
-            jTextField1.setEditable(false);
-            jTextField1.setBackground(values.getBackground());
-            jTextField1.setText("");
-        }
-
     }
 
 }

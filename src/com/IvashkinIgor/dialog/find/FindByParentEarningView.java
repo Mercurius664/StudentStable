@@ -20,11 +20,6 @@ public class FindByParentEarningView extends JFrame{
 
     private static FindByParentEarningView findByParentEarningView;
 
-
-    public static FindByParentEarningView getFindByParentEarningView() {
-        return findByParentEarningView;
-    }
-
     public JRadioButton getJRadioButtonFatherMoneyEnable() {
         return jRadioButtonFatherMoneyEnable;
     }
@@ -51,22 +46,6 @@ public class FindByParentEarningView extends JFrame{
 
     public JTextField getJTextFieldMotherMinForFindIndex4() {
         return jTextFieldMotherMinForFindIndex4;
-    }
-
-    public JLabel getJLabelFatherMaxForFindIndex4() {
-        return jLabelFatherMaxForFindIndex4;
-    }
-
-    public JLabel getJLabelFatherMinForFindIndex4() {
-        return jLabelFatherMinForFindIndex4;
-    }
-
-    public JLabel getJLabelMotherMaxForFindIndex4() {
-        return jLabelMotherMaxForFindIndex4;
-    }
-
-    public JLabel getJLabelMotherMinForFindIndex4() {
-        return jLabelMotherMinForFindIndex4;
     }
 
     public JPanel getJPanelForFindIndex4() {

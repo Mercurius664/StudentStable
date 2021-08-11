@@ -34,19 +34,6 @@ public class DeleteByCountOfBrothersAndSistersView extends JFrame {
         setIconImage(imageIcon.getImage());
     }
 
-
-    public JPanel getJPanelDelete() {
-        return jPanelDelete;
-    }
-
-    public JLabel getJLabelBrother() {
-        return jLabelBrother;
-    }
-
-    public static DeleteByCountOfBrothersAndSistersView getDeleteByCountOfBrothersAndSistersView() {
-        return deleteByCountOfBrothersAndSistersView;
-    }
-
     public JRadioButton getJRadioButtonSister() {
         return jRadioButtonSister;
     }

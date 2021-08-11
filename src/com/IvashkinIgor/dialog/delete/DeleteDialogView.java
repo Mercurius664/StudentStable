@@ -10,17 +10,6 @@ public class DeleteDialogView extends JFrame{
 
     private static DeleteDialogView deleteDialogView;
 
-
-    public JPanel getJPanelMainForDelete() {
-        return jPanelMainForDelete;
-    }
-
-    public static DeleteDialogView getDeleteDialogView() {
-        return deleteDialogView;
-    }
-
-
-
     public JComboBox getJComboBoxForDelete() {
         return jComboBoxForDelete;
     }
