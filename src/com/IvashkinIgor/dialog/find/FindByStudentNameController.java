@@ -28,10 +28,6 @@ public class FindByStudentNameController {
             public void actionPerformed(ActionEvent e) {
                 findDialogView.setCurrentPageNumberForFind(1);
                 Utilities.removeAllJTableElements(findDialogView.getDefaultTableModelForButtonFind());
-                int studentArrayListForFindSize = findStudentArrayList.size();
-                for (int i = 0; i < studentArrayListForFindSize; i++) {
-                    findStudentArrayList.remove(0);
-                }
 
                 String jTextFiendContent = findByStudentNameView.getJTextFieldForFindIndex1().getText();
                 for (int i = 0; i < studentArrayList.size(); i++) {
