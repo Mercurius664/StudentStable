@@ -22,7 +22,7 @@ public class StudentTable extends JTable {
     private int rowsOnPageCountMax;
     private int totalRecordsCount;
     private int pagesCount;
-    private int currentPage;
+    private int currentPage=1;
     private List<Student> workList;
 
     public StudentTable(MainDialogView mainDialogView){
@@ -40,6 +40,7 @@ public class StudentTable extends JTable {
         workList = model.getStudents();
         listenerInitialize();
     }
+
 
     public JScrollPane getJScrollPane() {
         return jScrollPane;
@@ -66,10 +67,14 @@ public class StudentTable extends JTable {
     }
 
     public void nextTablePage(){
-        showPage(++currentPage);
+        if (!(currentPage >= pagesCount)) {
+            showPage(++currentPage);
+        }
     }
     public void previousPage(){
-        showPage(--currentPage);
+        if (!(currentPage<= 1)){
+            showPage(--currentPage);
+        }
     }
     public void firstPage(){
         showPage(1);
@@ -85,9 +90,10 @@ public class StudentTable extends JTable {
     private void showPage(int index){
         removeAllTableElements();
         currentPage = index;
+        mainDialogView.getJLabelCurrentPage().setText(String.valueOf(currentPage));
         for (int i=currentPage*rowsOnPageCountMax-rowsOnPageCountMax; i<currentPage*rowsOnPageCountMax;i++){
             try {
-                addRow(workList.get(i));
+                defaultTableModel.addRow(splitStudent(workList.get(i)));
             }catch (Exception exception){
                 return;
             }
@@ -115,7 +121,7 @@ public class StudentTable extends JTable {
                 rowsOnPageCountCurrent = defaultTableModel.getRowCount();
                 totalRecordsCount = workList.size();
                 pagesCount = pageCountCalculate();
-                mainDialogView.getJLabelTotalPages().setText(String.valueOf(pagesCount));
+                mainDialogView.getJLabelTotalPages().setText("Total pages\n\t" + pagesCount);
 
                 mainDialogView.getJPanel().revalidate();
             }

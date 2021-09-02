@@ -114,9 +114,7 @@ public class ModelTest {
 
     @Test
     public void deleteByStudentNameTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
         List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
         model.deleteByStudentName("Cewia");
 
         List<Student> correctOutput = new ArrayList<>();
@@ -177,10 +175,7 @@ public class ModelTest {
 
     @Test
     public void filterByFatherNameTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
-        List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
-        studentArrayList = model.filterByFatherName("Minag");
+        List<Student> studentArrayList = model.filterByFatherName("Minag");
 
         List<Student> correctOutput = new ArrayList<>();
         correctOutput.add(new Student("Qudralodw",
@@ -201,9 +196,7 @@ public class ModelTest {
 
     @Test
     public void deleteByFatherNameTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
         List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
         model.deleteByFatherName("Minag");
 
         List<Student> correctOutput = new ArrayList<>();
@@ -266,10 +259,7 @@ public class ModelTest {
 
     @Test
     public void filterByMotherNameTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
-        List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
-        studentArrayList = model.filterByMotherName("Xalseilo");
+        List<Student> studentArrayList = model.filterByMotherName("Xalseilo");
 
         List<Student> correctOutput = new ArrayList<>();
         correctOutput.add(new Student("Taranayer",
@@ -284,9 +274,7 @@ public class ModelTest {
 
     @Test
     public void deleteByMotherNameTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
         List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
         model.deleteByMotherName("Dera");
 
         List<Student> correctOutput = new ArrayList<>();
@@ -354,10 +342,7 @@ public class ModelTest {
 
     @Test
     public void filterByFatherEarningTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
-        List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
-        studentArrayList = model.filterByFatherEarning(5000,7000);
+        List<Student> studentArrayList = model.filterByFatherEarning(5000,7000);
 
         List<Student> correctOutput = new ArrayList<>();
         correctOutput.add(new Student("Merolpyca",
@@ -378,9 +363,7 @@ public class ModelTest {
 
     @Test
     public void deleteByFatherEarningTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
         List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
         model.deleteByFatherEarning(0,9000);
 
         List<Student> correctOutput = new ArrayList<>();
@@ -399,10 +382,7 @@ public class ModelTest {
 
     @Test
     public void filterByMotherEarningTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
-        List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
-        studentArrayList = model.filterByMotherEarning(1000,4000);
+        List<Student> studentArrayList = model.filterByMotherEarning(1000,4000);
 
         List<Student> correctOutput = new ArrayList<>();
 
@@ -423,7 +403,7 @@ public class ModelTest {
                 5));
         correctOutput.add(new Student("Tevospri",
                 new Parent("Pokanetys",1244),
-                new Parent("Dera",2293),///////////////////////////////////////////
+                new Parent("Dera",2293),
                 3,
                 4));
 
@@ -433,9 +413,7 @@ public class ModelTest {
 
     @Test
     public void deleteByMotherEarningTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
         List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
         model.deleteByMotherEarning(7000,10000);
 
         List<Student> correctOutput = new ArrayList<>();
@@ -492,8 +470,7 @@ public class ModelTest {
 
     @Test
     public void filterByParentEarningTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
-        List<Student> studentArrayList;
+
         List<Student> fatherList = new ArrayList<>();
         fatherList.add(new Student("Taranayer",
                 new Parent("Yre",9346),
@@ -533,7 +510,7 @@ public class ModelTest {
                 1,
                 0));
 
-        studentArrayList = model.filterByParentEarning(fatherList,motherList);
+        List<Student> studentArrayList = model.filterByParentEarning(fatherList,motherList);
 
         List<Student> correctOutput = new ArrayList<>();
         correctOutput.add(new Student("Weeleie",
@@ -557,10 +534,7 @@ public class ModelTest {
 
     @Test
     public void filterByNumberOfBrotherTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
-        List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
-        studentArrayList = model.filterByNumberOfBrother(2);
+        List<Student> studentArrayList = model.filterByNumberOfBrother(2);
 
         List<Student> correctOutput = new ArrayList<>();
         correctOutput.add(new Student("Taranayer",
@@ -582,7 +556,6 @@ public class ModelTest {
 
     @Test
     public void deleteByNumberOfBrotherTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
         List<Student> studentArrayList = model.getStudents();
         studentArrayList.addAll(studentsData());
         model.deleteByNumberOfBrother(2);
@@ -638,10 +611,7 @@ public class ModelTest {
 
     @Test
     public void filterByNumberOfSisterTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
-        List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
-        studentArrayList = model.filterByNumberOfSister(3);
+        List<Student> studentArrayList = model.filterByNumberOfSister(3);
 
         List<Student> correctOutput = new ArrayList<>();
         correctOutput.add(new Student("Taranayer",
@@ -662,9 +632,7 @@ public class ModelTest {
 
     @Test
     public void deleteByNumberOfSisterTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
         List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
         model.deleteByNumberOfSister(4);
         model.deleteByNumberOfSister(3);
 
@@ -719,11 +687,7 @@ public class ModelTest {
 
     @Test
     public void filterByFatherAndMotherNameTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
-        List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
-        studentArrayList = model.filterByFatherAndMotherName("Minag","Xanannga");
-
+        List<Student> studentArrayList = model.filterByFatherAndMotherName("Minag","Xanannga");
         List<Student> correctOutput = new ArrayList<>();
         correctOutput.add(new Student("Hopalital",
                 new Parent("Minag",8298),
@@ -737,9 +701,7 @@ public class ModelTest {
 
     @Test
     public void deleteByFatherAndMotherNameTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
         List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
         model.deleteByFatherAndMotherName("Minag","Xanannga");
 
 
@@ -807,10 +769,7 @@ public class ModelTest {
 
     @Test
     public void filterByBrothersAndSistersCountTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
-        List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
-        studentArrayList = model.filterByBrothersAndSistersCount(1,0);
+        List<Student> studentArrayList = model.filterByBrothersAndSistersCount(1,0);
 
         List<Student> correctOutput = new ArrayList<>();
 
@@ -827,9 +786,7 @@ public class ModelTest {
 
     @Test
     public void deleteByBrothersAndSistersCountTest(){
-        Model model = new StudentTable(new MainDialogView()).getStudentModel();
         List<Student> studentArrayList = model.getStudents();
-        studentArrayList.addAll(studentsData());
 
         model.deleteByBrothersAndSistersCount(2,3);
         model.deleteByBrothersAndSistersCount(5,2);

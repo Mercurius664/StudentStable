@@ -28,7 +28,7 @@ public class SAXExample {
 
 
         model.getStudents().clear();
-        model.getStudents().addAll(students);
+        students.forEach(studentTable::addRow);
 
     }
 
