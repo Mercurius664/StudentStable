@@ -171,7 +171,8 @@ public class FindDialogView extends JFrame {
                 findByCountOfBrothersAndSistersView,
                 findByParentEarningView,
                 findByParentNameView,
-                findByStudentNameView);
+                findByStudentNameView,
+                studentTable);
     }
 
     public DefaultTableModel getDefaultTableModelForButtonFind() {
