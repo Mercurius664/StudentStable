@@ -6,7 +6,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class DeleteDialogController {
-    private DeleteDialogView deleteDialogView;
+
     private DeleteByParentEarningView deleteByParentEarningView;
     private DeleteByParentNameView deleteByParentNameView;
     private DeleteByStudentNameView deleteByStudentNameView;
@@ -19,7 +19,6 @@ public class DeleteDialogController {
             DeleteByCountOfBrothersAndSistersView deleteByCountOfBrothersAndSistersView) {
 
 
-        this.deleteDialogView = deleteDialogView;
         this.deleteByParentEarningView = deleteByParentEarningView;
         this.deleteByParentNameView = deleteByParentNameView;
         this.deleteByStudentNameView = deleteByStudentNameView;
@@ -29,6 +28,7 @@ public class DeleteDialogController {
             @Override
             public void windowClosing(WindowEvent e) {
                 disableAllDeleteFrames();
+                deleteDialogView.getJComboBoxForDelete().setSelectedIndex(0);
             }
         });
         deleteDialogView.getJComboBoxForDelete().addActionListener(new ActionListener() {
@@ -37,14 +37,19 @@ public class DeleteDialogController {
                 disableAllDeleteFrames();
                 int selectedIndex = deleteDialogView.getJComboBoxForDelete().getSelectedIndex();
 
-                if (selectedIndex == 1) {
-                    deleteByStudentNameView.setVisible(true);
-                } else if (selectedIndex == 2) {
-                    deleteByParentNameView.setVisible(true);
-                } else if (selectedIndex == 3) {
-                    deleteByCountOfBrothersAndSistersView.setVisible(true);
-                } else if (selectedIndex == 4) {
-                    deleteByParentEarningView.setVisible(true);
+                switch (selectedIndex){
+                    case 1:
+                        deleteByStudentNameView.setVisible(true);
+                        break;
+                    case 2:
+                        deleteByParentNameView.setVisible(true);
+                        break;
+                    case 3:
+                        deleteByCountOfBrothersAndSistersView.setVisible(true);
+                        break;
+                    case 4:
+                        deleteByParentEarningView.setVisible(true);
+                        break;
                 }
 
             }

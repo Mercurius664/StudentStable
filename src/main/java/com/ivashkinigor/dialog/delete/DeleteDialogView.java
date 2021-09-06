@@ -28,7 +28,6 @@ public class DeleteDialogView extends JFrame{
             setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             setTitle("Title");
             setLocationRelativeTo(null);
-            setSize(655, 270);
             ImageIcon imageIcon = new ImageIcon("C:\\Users\\Igor\\Desktop\\книги\\!!!PROFILI!!!\\картинки\\avesta\\l3r1WDtOWio.jpg");
             setIconImage(imageIcon.getImage());
             this.studentTable = studentTable;
